@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/green-slime" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Convite Slime Rancher!</h1>
+    </header>
+    <main>
+        <div class="convite">
+            <h1 class="title-conv">Boa Tarde Senhorita Gabriela.</h1>
+            <p>Gostaria de saber se a senhorita poderia me dar a honra de acompanhar-la em uma aventura épica e cheia de slimes pelo mundo de Slime Rancher. Será uma noite de muita diversão e alegria para ambos, espero que possa aceitar meu convite.<br><br>A Sessão irá começar a partir do horário de preferencia da senhorita.</p>
+            <div class="radio-container">
+                <label for="sim">
+                    <input type="radio" name="resposta" id="sim">
+                    <span class="custom-radio"></span>
+                    SIM
+                </label>
+                <label for="nao">
+                    <input type="radio" name="resposta" id="nao">
+                    <span class="custom-radio"></span>
+                    NÃO
+                </label>
+            </div>
+            <div>
+                <a class="slime" href="https://wa.me/5541985190602?text=Eu%20lhe%20dou%20esta%20honra%20amor%20da%20minha%20vida!">Enviar</a>
+            </div>
+            <div id="alert-slime" class="alert-slime">
+                <p>Por favor amorzinho 🥺</p>
+                <button class="close-button" onclick="closeAlert()">Fechar</button>
+            </div>
+            <div id="overlay" class="overlay"></div>
+        </div>
+    </main>
+</body>
+</html>

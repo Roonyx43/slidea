@@ -1,0 +1,242 @@
+@import url('https://fonts.cdnfonts.com/css/green-slime');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(200, 255, 117, 0.705);
+    font-family: 'GREEN SLIME', sans-serif;
+    color: rgb(252, 80, 151);
+    padding: 2vw;
+    font-size: 4vw;
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background: url('/assets/slime.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 1.5vw; /* Base font size */
+}
+
+.convite {
+    background-color: rgba(177, 74, 202, 0.507);
+    font-family: 'GREEN SLIME', sans-serif;
+    color: rgb(252, 80, 151);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+    margin-top: 10vh;
+    padding: 5vw;
+    border: 6px solid rgb(252, 80, 151);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.title-conv {
+    margin-top: 2vw;
+    font-size: 3vw;
+}
+
+p {
+    color: rgb(200, 255, 117);
+    margin-top: 2vw;
+    font-size: 2.5vw;
+    text-align: center;
+    font-family: 'GREEN SLIME', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.radio-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vw;
+}
+
+.radio-container label {
+    margin: 0 2vw;
+    font-family: 'GREEN SLIME', sans-serif;
+    color: rgb(200, 255, 117);
+    font-size: 2.5vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+.custom-radio {
+    display: inline-block;
+    width: 2.5vw;
+    height: 2.5vw;
+    border: 0.4vw solid rgb(200, 255, 117);
+    border-radius: 50%;
+    margin-right: 1vw;
+    position: relative;
+}
+
+.custom-radio::after {
+    content: '';
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background-color: rgb(252, 80, 151);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+    opacity: 1;
+}
+
+@keyframes anime{
+    0% {border-radius: 40% 60% 50% 40%/40% 40% 60% 60%;}
+    25% {border-radius: 70% 40% 80% 80%/60% 80% 40% 30%;}
+    50% {border-radius: 40% 50% 50% 40%/80% 40% 20% 70%;}
+    75% {border-radius: 80% 50% 70% 90%/40% 60% 70% 40%;}
+    100% {border-radius: 40% 60% 50% 40%/40% 40% 60% 60%;}
+  }
+  
+  .slime{
+    text-decoration:none;
+    font-size: 30px;
+    margin:10px;
+    margin-top: 50px;
+    color:rgb(252, 80, 151);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width:100px;
+    height:60px;
+    background: rgb(200, 255, 117);
+    border-radius: 40% 60% 50% 40%/40% 40% 60% 60%;
+    animation: anime 7s linear infinite;
+    transition: 1s;
+  }
+  
+  .slime:hover{
+    background: rgb(252, 80, 151);
+    color: rgb(200, 255, 117);
+    transition: 1s;
+  }
+
+  /* Estilização do alerta */
+.alert-slime {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(177, 74, 202, 0.9);
+    color: white;
+    padding: 2vw 4vw;
+    border-radius: 2vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-family: 'GREEN SLIME', sans-serif;
+    font-size: 3vw;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.alert-slime.active {
+    display: block;
+    opacity: 1;
+}
+
+.alert-slime button {
+    background: #32a852;
+    border: none;
+    padding: 0.5vw 1.5vw;
+    margin-top: 1vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    color: white;
+    font-family: 'GREEN SLIME', sans-serif;
+    font-size: 2vw;
+}
+
+.alert-slime button:hover {
+    background: #28a745;
+}
+
+.alert-slime button:active {
+    background: #239d3f;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000; /* Colocando abaixo do alert-slime */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Responsividade adicional para tamanhos menores */
+@media (max-width: 600px) {
+    header {
+        font-size: 5vw;
+    }
+    
+    .title-conv {
+        font-size: 7vw;
+    }
+
+    p {
+        font-size: 6vw;
+    }
+
+    .radio-container label {
+        font-size: 6vw;
+    }
+
+    .custom-radio {
+        width: 6vw;
+        height: 6vw;
+        border-width: 0.8vw;
+    }
+
+    .custom-radio::after {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .alert-slime{
+        width: 80%;
+    }
+
+    .alert-slime button{
+        font-size: 6vw;
+        height: 35px;
+    }
+}

@@ -39,6 +39,7 @@ body {
     width: 80%;
     max-width: 800px;
     margin-top: 10vh;
+    margin-bottom: 10vh;
     padding: 5vw;
     border: 6px solid rgb(252, 80, 151);
     border-radius: 15px;

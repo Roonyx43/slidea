@@ -35,8 +35,65 @@
                 <p>Por favor amorzinho 🥺</p>
                 <button class="close-button" onclick="closeAlert()">Fechar</button>
             </div>
+            <div id="image-selection" class="alert">
+                <p>Selecione seu slime favorito:</p>
+                <div>
+                    <div class="select1">
+                        <input type="radio" id="img1" name="image" value="image1">
+                        <label for="img1"><img src="/assets/Rock_Slime.webp" alt="Image 1" width="100"></label><br>
+                    </div>
+                    <div class="select2">
+                        <input type="radio" id="img2" name="image" value="image2">
+                        <label for="img2"><img src="/assets/SlimeGato.webp" alt="Image 2" width="100"></label><br>
+                    </div>
+                    <div class="select3">
+                        <input type="radio" id="img3" name="image" value="image3">
+                        <label for="img3"><img src="/assets/Slime_Fosforecente.webp" alt="Image 3" width="100"></label><br>
+                    </div>
+                    <div class="select4">
+                        <input type="radio" id="img4" name="image" value="image4">
+                        <label for="img4"><img src="/assets/Pink_Slime.webp" alt="Image 4" width="100"></label>
+                    </div>
+                </div>
+                <div class="enviarpedido">
+                    <a id="enviar-slime" class="slime" href="#">Enviar</a>
+                </div>
+            </div>
             <div id="overlay" class="overlay"></div>
         </div>
     </main>
+    <script>
+        document.getElementById('enviar-slime').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            const radios = document.getElementsByName('image');
+            let selectedValue;
+            for (const radio of radios) {
+                if (radio.checked) {
+                    selectedValue = radio.value;
+                    break;
+                }
+            }
+            let link;
+            switch (selectedValue) {
+                case 'image1':
+                    link = 'https://wa.me/5541985190602?text=Meu%20slime%20favorito%20%C3%A9%20o%20Pedrinha.%20E%20eu%20lhe%20dou%20esta%20honra%20amor%20da%20minha%20vida!';
+                    break;
+                case 'image2':
+                    link = 'https://wa.me/5541985190602?text=Meu%20slime%20favorito%20%C3%A9%20o%20GATO.%20E%20eu%20lhe%20dou%20esta%20honra%20amor%20da%20minha%20vida!';
+                    break;
+                case 'image3':
+                    link = 'https://wa.me/5541985190602?text=Meu%20slime%20favorito%20%C3%A9%20o%20Vagalume.%20E%20eu%20lhe%20dou%20esta%20honra%20amor%20da%20minha%20vida!';
+                    break;
+                case 'image4':
+                    link = 'https://wa.me/5541985190602?text=Meu%20slime%20favorito%20%C3%A9%20o%20Iogurte.%20E%20eu%20lhe%20dou%20esta%20honra%20amor%20da%20minha%20vida!';
+                    break;
+                default:
+                    link = '#'; // Default link if none selected
+                    break;
+            }
+            this.href = link;
+            window.location.href = link; // Redirect to the selected link
+        });
+    </script>
 </body>
 </html>

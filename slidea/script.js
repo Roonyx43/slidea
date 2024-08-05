@@ -1,17 +1,23 @@
 function showAlert() {
     const naoRadio = document.getElementById('nao');
     const simRadio = document.getElementById('sim');
-    const url = 'https://wa.me/5541985190602?text=Eu%20lhe%20dou%20esta%20honra%20amor%20da%20minha%20vida!'
     if (naoRadio.checked) {
         document.getElementById('alert-slime').classList.add('active');
         document.getElementById('overlay').classList.add('active');
-    }if (simRadio.checked) {
-        window.location.href = url;
+    }
+    if (simRadio.checked) {
+        document.getElementById('image-selection').classList.add('active');
+        document.getElementById('overlay').classList.add('active');
     }
 }
 
 function closeAlert() {
     document.getElementById('alert-slime').classList.remove('active');
+    document.getElementById('overlay').classList.remove('active');
+}
+
+function closeImageSelection() {
+    document.getElementById('image-selection').classList.remove('active');
     document.getElementById('overlay').classList.remove('active');
 }
 
@@ -21,3 +27,4 @@ document.addEventListener('DOMContentLoaded', function() {
         showAlert();
     });
 });
+
